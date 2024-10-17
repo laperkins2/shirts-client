@@ -12,7 +12,7 @@ export default function Home() {
         },
       }
     );
-    console.log();
+
     return data;
   };
 
@@ -30,7 +30,7 @@ export default function Home() {
           <li key={shirt.id}>
             {shirt.id}
             <Image
-              src={shirt.image}
+              src={shirt.image_url}
               alt={shirt.name}
               width={200}
               height={200}
