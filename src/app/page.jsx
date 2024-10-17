@@ -25,20 +25,21 @@ export default function Home() {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error... {error.message}</div>;
   return (
-    <div>
-      <h1>Shirts For Sale</h1>
-      <ul>
+    <div className="container mx-auto">
+      <h1 className="test-3xl font-bold text-center my-8">Shirts For Sale</h1>
+      <ul className="flex flex-wrap justify-center">
         {data?.map((shirt) => (
-          <li key={shirt.id}>
-            <Link href={`/shirts/${shirt.id}`}>
+          <li key={shirt.id} className="m-4">
+            <Link href={`/shirts/${shirt.id}`} className="block text-center">
               {shirt.id}
               <Image
                 src={shirt.image_url}
                 alt={shirt.name}
                 width={200}
                 height={200}
+                className="rounded-lg shadow-lg"
               />
-              <h2>{shirt.name}</h2>
+              <h2 className="mt-2 text-lg font-medium">{shirt.name}</h2>
               <p>{shirt.description}</p>
               <p>${shirt.price}</p>
             </Link>
