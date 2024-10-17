@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import Link from 'next/link';
+
 export default function Home() {
   const fetchShirts = async () => {
     const { data } = await axios.get(
@@ -28,16 +30,18 @@ export default function Home() {
       <ul>
         {data?.map((shirt) => (
           <li key={shirt.id}>
-            {shirt.id}
-            <Image
-              src={shirt.image_url}
-              alt={shirt.name}
-              width={200}
-              height={200}
-            />
-            <h2>{shirt.name}</h2>
-            <p>{shirt.description}</p>
-            <p>${shirt.price}</p>
+            <Link href={`/shirts/${shirt.id}`}>
+              {shirt.id}
+              <Image
+                src={shirt.image_url}
+                alt={shirt.name}
+                width={200}
+                height={200}
+              />
+              <h2>{shirt.name}</h2>
+              <p>{shirt.description}</p>
+              <p>${shirt.price}</p>
+            </Link>
           </li>
         ))}
       </ul>
