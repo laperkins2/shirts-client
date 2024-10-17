@@ -1,4 +1,5 @@
-import ShirtDetail from 'src/app/shirts/ShirtDetail';
+import ShirtDetail from '../../../components/ShirtDetail';
+
 export default function Page({ params }) {
-  return <ShirtDetail id={params.id} />;
+  return <ShirtDetail params={params} />;
 }
