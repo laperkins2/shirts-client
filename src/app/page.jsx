@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Link from 'next/link';
 import { useCart } from '../context/CartContext';
+import { ShoppingCartIcon } from '@heroicons/react/outline';
 
 export default function Home() {
   const { addItem } = useCart();
@@ -56,12 +57,9 @@ export default function Home() {
               <p>{shirt.description}</p>
               <p>${shirt.price}</p>
             </Link>
-            <button
-              onClick={() => addItem(shirt)}
-              className="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
-            >
-              Add to Cart
-            </button>
+            <div className="mt-2 cursor-pointer" onClick={() => addItem(shirt)}>
+              <ShoppingCartIcon className="w-6 h-6 text-blue-500" />
+            </div>
           </li>
         ))}
       </ul>
