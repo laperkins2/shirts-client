@@ -45,7 +45,6 @@ export default function Home() {
         {data?.map((shirt) => (
           <li key={shirt.id} className="m-4">
             <Link href={`/shirts/${shirt.id}`} className="block text-center">
-              {shirt.id}
               <Image
                 src={shirt.image_url}
                 alt={shirt.name}
@@ -54,8 +53,13 @@ export default function Home() {
                 className="rounded-lg shadow-lg"
               />
               <h2 className="mt-2 text-lg font-medium">{shirt.name}</h2>
+              <p className="text-gray-500">
+                ID: <span className="opacity-25">{shirt.id}</span>
+              </p>
               <p>{shirt.description}</p>
-              <p>${shirt.price}</p>
+              <p className="text-gray-500">
+                Price: <span className="opacity-25">{shirt.price}</span>
+              </p>
             </Link>
             <div className="mt-2 cursor-pointer" onClick={() => addItem(shirt)}>
               <ShoppingCartIcon className="w-6 h-6 text-blue-500" />
