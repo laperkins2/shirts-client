@@ -22,11 +22,21 @@ export default function Home() {
     queryKey: ['shirts'],
     queryFn: fetchShirts,
   });
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error... {error.message}</div>;
+
+  if (isLoading)
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="spinner"></div>
+      </div>
+    );
+  if (isError)
+    return (
+      <div className="text-center text-red-500">Error... {error.message}</div>
+    );
   return (
     <div className="container mx-auto">
-      <h1 className="test-3xl font-bold text-center my-8">Shirts For Sale</h1>
+      <h1 className="text-3xl font-bold text-center my-8">Shirts For Sale</h1>
+
       <ul className="flex flex-wrap justify-center">
         {data?.map((shirt) => (
           <li key={shirt.id} className="m-4">
