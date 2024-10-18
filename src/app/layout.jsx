@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="my-18 text-center">Shirts For Sale</header>
+        <header className="my-18 text-center">
+          Future Purchasing Coming Soon
+        </header>
         <main className="min-h-screen">
           <Providers>
             <CartProvider>{children}</CartProvider>
