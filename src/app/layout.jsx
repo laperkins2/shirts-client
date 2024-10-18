@@ -2,6 +2,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 
 import { Providers } from '@/providers';
+import { CartProvider } from '../context/CartContext';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
       >
         <header className="my-18 text-center">Shirts For Sale</header>
         <main className="min-h-screen">
-          <Providers>{children}</Providers>
+          <Providers>
+            <CartProvider>{children}</CartProvider>
+          </Providers>
         </main>
         <footer className="my-18 text-center">
           &copy; Louis Perkins Capstone Level 4

@@ -3,8 +3,11 @@ import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Link from 'next/link';
+import { useCart } from '../context/CartContext';
 
 export default function Home() {
+  const { addItem } = useCart();
+
   const fetchShirts = async () => {
     const { data } = await axios.get(
       `${process.env.NEXT_PUBLIC_API_URL}/shirts`,
@@ -53,6 +56,12 @@ export default function Home() {
               <p>{shirt.description}</p>
               <p>${shirt.price}</p>
             </Link>
+            <button
+              onClick={() => addItem(shirt)}
+              className="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+            >
+              Add to Cart
+            </button>
           </li>
         ))}
       </ul>
