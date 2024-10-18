@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: 'Shirts For Sale',
+  title: 'Future Site to Purchase Shirts',
   description: 'An online store for shirts for level 4 capstone',
 };
 
