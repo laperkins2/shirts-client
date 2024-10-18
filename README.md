@@ -1,14 +1,16 @@
-# Frontend Shirts Description and Sale Price
+# Shirts For Sale
 
-This is a frontend interface for a shirt collection, showcasing descriptions and prices. Users can browse through the shirts, with plans for a purchasing feature in the future. The project is built using Next.js and styled with Tailwind CSS.
+This project is a Next.js application that serves as an online store for shirts. Users can browse a collection of shirts, view details for each item, and soon, make purchases. The app is styled using Tailwind CSS and utilizes React Query for data fetching.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Available Scripts](#available-scripts)
+- [Features](#features)
+- [Components](#components)
+- [Environment Variables](#environment-variables)
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 ## Installation
 
@@ -52,20 +54,40 @@ Make sure you have the following installed on your local machine:
    npm run dev
    ```
 
-   Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+   Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
 ## Usage
 
-- **Home Page:** Displays the app title and provides access to the shirt collection.
-- **Shirts Page:** Lists available shirts sorted alphabetically, each featuring an image, description, and price.
-- **Shirt Details Page:** Click on any shirt to view a larger picture, full description, and price.
-- **Checkout Page:** Coming soon!
+### Home Page
 
-## API Integration
+- Displays a list of available shirts with images, descriptions, and prices.
+- Users can click on a shirt to view its details.
 
-This project connects to a backend API to fetch and display data about the shirts.
+### Shirt Details Page
 
-- **Shirts Endpoint:** Fetches all shirts and can fetch or delete by ID.
+- Shows detailed information about a specific shirt, including an enlarged image, full description, and price.
+
+## Features
+
+- Responsive design with Tailwind CSS.
+- Fetches data from a Supabase backend using Axios and React Query.
+- Loading and error states are handled gracefully.
+
+## Components
+
+- **Home:** Displays the list of shirts.
+- **ShirtDetail:** Shows detailed information for a selected shirt.
+- **Providers:** Wraps the application in a React Query provider for state management.
+- **Spinner:** Custom spinner component for loading states.
+
+## Environment Variables
+
+To configure the application, create a `.env.local` file in the root directory and set the following variables:
+
+```env
+NEXT_PUBLIC_API_URL=your_api_url
+NEXT_PUBLIC_API_KEY=your_api_key
+```
 
 ## License
 
@@ -74,5 +96,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgements
 
 - Next.js documentation
-- Instructor Thomas Basham
 - Tailwind CSS documentation
+- React Query documentation
+- Supabase documentation
+
+Feel free to customize and expand this README based on your specific needs and project details!
